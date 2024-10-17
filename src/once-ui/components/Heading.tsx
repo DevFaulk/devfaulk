@@ -58,7 +58,7 @@ const Heading = <T extends ElementType = 'h1'>({
         ? getVariantClasses(variant)
         : [sizeClass, weightClass];
 
-    let colorClass = 'neutral-on-background-strong';
+    let colorClass = 'neutral-on-background-medium';
     if (onBackground) {
         const [scheme, weight] = onBackground.split('-') as [ColorScheme, ColorWeight];
         colorClass = `${scheme}-on-background-${weight}`;

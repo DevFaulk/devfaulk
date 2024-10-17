@@ -19,10 +19,12 @@ const person = {
     location:  'America/New_York',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English']  // optional: Leave the array empty if you don't want to display languages
 }
-
+const responses = {
+    letterTitle: <>Stay up to date with me.</>
+}
 const newsletter = {
     display: true,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
+    title: responses.letterTitle,
     description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
 
@@ -55,8 +57,8 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Developer Designer and Editor</>,
-    subline: <>I'm Theodore, currently an engineer at <InlineCode>BNY</InlineCode>, where I craft intuitive<br/> user experiences, and edit videos/make games in my free time.</>,
+    headline: <>Developer Designer and Video Editor</>,
+    subline: <>Hello I am Theo! I am currently an engineer at <InlineCode>BNY</InlineCode>, where I craft intuitive<br/> user experiences, and edit videos/make games in my free time.</>,
 }
 
 const about = {
@@ -267,4 +269,4 @@ const gallery = {
     ]
 }
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, responses };

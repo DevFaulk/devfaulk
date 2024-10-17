@@ -15,9 +15,9 @@ export const Footer = () => {
                 justifyContent="space-between" alignItems="center">
                 <Text
                     variant="body-default-s"
-                    onBackground="neutral-strong">
+                    onBackground="neutral-strong" style={{fontSize: '8px'}}>
                     <Text
-                        onBackground="neutral-weak">
+                        onBackground="neutral-weak" style={{fontSize: '8px'}}>
                         © {currentYear} /
                     </Text>
                     <Text paddingX="4">
@@ -25,7 +25,7 @@ export const Footer = () => {
                     </Text>
                     <Text onBackground="neutral-weak">
                         {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-                        / Build your portfolio with <SmartLink style={{marginLeft: '-0.125rem'}} href="https://once-ui.com/templates/magic-portfolio">Once UI</SmartLink>
+                        / Build your portfolio with <SmartLink style={{marginLeft: '-0.125rem', fontSize: '8px'}} href="https://once-ui.com/templates/magic-portfolio">Once UI</SmartLink>
                     </Text>
                 </Text>
                 <Flex

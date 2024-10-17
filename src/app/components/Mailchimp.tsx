@@ -112,9 +112,6 @@ export const Mailchimp = () => {
                         <div className="response" id="mce-error-response" style={{display: 'none'}}></div>
                         <div className="response" id="mce-success-response" style={{display: 'none'}}></div>
                     </div>
-                    <div aria-hidden="true" style={{position: 'absolute', left: '-5000px'}}>
-                        <input type="text" readOnly name="b_c1a5a210340eb6c7bff33b2ba_0462d244aa" tabIndex={-1} value=""/>
-                    </div>
                     <div className="clear">
                         <Flex
                             height="48" alignItems="center">
@@ -126,6 +123,23 @@ export const Mailchimp = () => {
                                 Sign up
                             </Button>
                         </Flex>
+                        <Flex height="24" alignItems='center' justifyContent='center'>
+                            <strong>or</strong>
+                        </Flex>
+                        <Flex
+                            height="48" alignItems="center">
+                            <Button
+                                id="mc-embedded-subscribe"
+                                value="Subscribe"
+                                size="s"
+                                fillWidth
+                                href='https://medium.com/@faulkdev/list/dev-blog-60a964750b8c'
+                                >
+                                Medium
+                            </Button>
+                            
+                        </Flex>
+                        
                     </div>
                 </Flex>
             </form>

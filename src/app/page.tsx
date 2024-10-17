@@ -81,8 +81,8 @@ export default function Home() {
 						<RevealFx translateY="8" delay={0.2}>
 							<Text
 								wrap="balance"
-								onBackground="neutral-weak"
-								variant="body-default-l">
+								onBackground="neutral-medium"
+								variant="body-default-m">
 								{home.subline}
 							</Text>
 						</RevealFx>
@@ -92,15 +92,17 @@ export default function Home() {
 								href="/about"
 								variant="tertiary"
 								suffixIcon="chevronRight"
-								size="m">
+								size="l"
+								style={{fontSize: "2rem"}}>
 								<Flex
 									gap="8"
-									alignItems="center">
+									alignItems="center"
+									>
 									{about.avatar.display && (
 										<Avatar
-											style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
+											style={{marginLeft: '-1.5rem', marginRight: '0.25rem'}}
 											src={person.avatar}
-											size="m"/>
+											size="l"/>
 										)}
 										About me
 								</Flex>
