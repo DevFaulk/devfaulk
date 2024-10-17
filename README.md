@@ -1,4 +1,4 @@
-![alt text](public\images\Design.png)
+![alt text](public/images/Design.png)
 
 Welcome to my personal developer portfolio, built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
@@ -10,9 +10,9 @@ I'm DevFaulk, a passionate developer with expertise in web technologies. This po
 
 Here are some of my notable projects:
 
-1. **Project A**: A brief description of Project A.
-2. **Project B**: A brief description of Project B.
-3. **Project C**: A brief description of Project C.
+1. **Project A**: Manic Games Studio
+2. **Project B**: Jack The Jackrabbit
+3. **Project C**: Mountain Views
 
 For more details, visit the [Projects](/work) section.
 
