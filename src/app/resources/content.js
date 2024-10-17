@@ -1,15 +1,23 @@
 import { InlineCode } from "@/once-ui/components";
+import { style } from "./config";
+import { styleText } from "util";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'Theodore',
+    lastName:  'Faulk',
+    pronounOne: 'He',
+    pronounTwo: 'Him',
+    pronounThree: 'His', // All pronouns are singular in this context
+    get pronouns() {
+        return `${this.pronounOne} / ${this.pronounTwo} / ${this.pronounThree}`
+    },
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
     role:      'Design Engineer',
     avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    location:  'America/New_York',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ['English']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
@@ -24,22 +32,22 @@ const social = [
     {
         name: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
+        link: 'https://github.com/devfaulk',
     },
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
+        link: 'https://www.linkedin.com/in/theodore-faulk-98645628a/',
     },
     {
         name: 'X',
         icon: 'x',
-        link: '',
+        link: 'https://x.com/faulkteddy',
     },
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:faulkdev@gmail.com',
     },
 ]
 
@@ -47,14 +55,14 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    headline: <>Developer Designer and Editor</>,
+    subline: <>I'm Theodore, currently an engineer at <InlineCode>BNY</InlineCode>, where I craft intuitive<br/> user experiences, and edit videos/make games in my free time.</>,
 }
 
 const about = {
     label: 'About',
     title: 'About me',
-    description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+    description: `Meet ${person.name}, ${person.role} from ${person.location} pronouns ${person.pronouns}`,
     tableOfContent: {
         display: true,
         subItems: true
@@ -69,16 +77,16 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>{person.firstName} is a Pittsburgh-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. {person.pronounThree} work spans digital interfaces, interactive experiences, and the convergence of design, accessibility, and technology.</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
+                company: 'BNY',
                 timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                role: 'Product Support Engineer',
                 achievements: [
                     <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
                     <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
@@ -93,9 +101,9 @@ const about = {
                 ]
             },
             {
-                company: 'Creativ3',
+                company: 'BNY',
                 timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                role: 'Shared Services Engineer and Designer',
                 achievements: [
                     <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
                     <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
@@ -109,12 +117,16 @@ const about = {
         title: 'Studies',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'Community College of Allegheny County',
+                description: <>Studying Java video game development, and game design.</>,
             },
             {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
+                name: 'Year Up',
+                description: <>Studied 400 hours of front-end development</>
+            },
+            {
+                name: 'Community College of the Airforce',
+                description: <>Studied 60 credits in general sciences.</>,
             }
         ]
     },
@@ -151,6 +163,10 @@ const about = {
                         height: 9
                     },
                 ]
+            },
+            {
+                title: 'React',
+                description: <>Building react apps with React + TSX + Vercel</>
             }
         ]
     }

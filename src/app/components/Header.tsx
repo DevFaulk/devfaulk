@@ -54,10 +54,10 @@ export const Header = () => {
             className={styles.position}
             as="header"
             zIndex={9}
-            fillWidth padding="8"
+            fillWidth padding="8" 
             justifyContent="center">
             <Flex
-                hide="s"
+                hide="s" 
                 paddingLeft="12" fillWidth
                 alignItems="center"
                 textVariant="body-default-s">

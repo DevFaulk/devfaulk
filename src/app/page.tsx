@@ -43,7 +43,6 @@ export default function Home() {
 			direction="column" alignItems="center">
 			<script
 				type="application/ld+json"
-				suppressHydrationWarning
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
 						'@context': 'https://schema.org',
@@ -73,6 +72,7 @@ export default function Home() {
 						fillWidth maxWidth="s" gap="m">
 						<RevealFx translateY="4">
 							<Heading
+								paddingBottom='8'
 								wrap="balance"
 								variant="display-strong-l">
 								{home.headline}
