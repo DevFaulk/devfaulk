@@ -9,7 +9,7 @@ I'm DevFaulk, a passionate developer with expertise in web technologies. This po
 
 Here are some of my notable projects:
 
-1. **Project A**: Manic Games Studio
+1. **Project A**: Manic Game Studios
 2. **Project B**: Jack The Jackrabbit
 3. **Project C**: Mountain Views
 
