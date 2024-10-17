@@ -1,79 +1,78 @@
-# **Build your portfolio with Once UI's Magic Portfolio**
+ ____             _____           _ _    
+|  _ \  _____   _|  ___|_ _ _   _| | | __
+| | | |/ _ \ \ / / |_ / _` | | | | | |/ /
+| |_| |  __/\ V /|  _| (_| | |_| | |   < 
+|____/ \___| \_/ |_|  \__,_|\__,_|_|_|\_\
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+Welcome to my personal developer portfolio, built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+## **About Me**
 
-**2. Install dependencies**
-```
-npm install
-```
+I'm DevFaulk, a passionate developer with expertise in web technologies. This portfolio showcases my projects, skills, and experiences in the world of software dev, game dev, and video editing.
 
-**3. Run dev server**
-```
-npm run dev
-```
+## **Projects**
 
-**4. Edit config**
-```
-src/app/resources/config
-```
+Here are some of my notable projects:
 
-**5. Edit content**
-```
-src/app/resources/content
-```
+1. **Project A**: A brief description of Project A.
+2. **Project B**: A brief description of Project B.
+3. **Project C**: A brief description of Project C.
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+For more details, visit the [Projects](/work) section.
 
-# **Features**
+## **Skills**
 
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com) (v0.3.1)
+- JavaScript/TypeScript
+- React.js
+- Node.js
+- HTML/CSS
+- Git
+- [Add more relevant skills]
 
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+## **Experience**
 
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+- **Company X** - Senior Developer (2020-Present)
+- **Company Y** - Full Stack Developer (2018-2020)
+- **Company Z** - Junior Developer (2016-2018)
 
-TIP:
-You try pre-built designs by changing the imports for the config and content in src/app/resources/index.ts
+For a complete work history, check out my [About/CV](/about) page.
 
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+## **Blog**
 
-# **Authors**
+I occasionally write about development topics. Check out my latest posts in the [Blog](/blog) section.
 
-Connect with us on X or LinkedIn.
+## **Contact**
 
-Lorant Toth: [X](https://x.com/lorant_one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [X](https://x.com/zsofiakomaromi), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
+Feel free to reach out to me:
 
-# **Get involved**
+- Email: devfaulk@example.com
+- LinkedIn: [DevFaulk](https://www.linkedin.com/in/devfaulk)
+- GitHub: [DevFaulk](https://github.com/devfaulk)
 
-- Join the [Once UI Discord server](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with designers and developers!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
+## **Portfolio Features**
 
-# **License**
+- Responsive design for all devices
+- Built with Once UI and Next.js
+- SEO optimized with automatic metadata generation
+- Blog and project showcase sections
 
-Distributed under the CC BY-NC 4.0 License.
+## **Setup and Customization**
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the dev server with `npm run dev`
+4. Edit configuration in `src/app/resources/config`
+5. Update content in `src/app/resources/content`
+6. Add blog posts or projects in `src/app/blog/posts` or `src/app/work/projects`
+
+## **Acknowledgements**
+
+This portfolio is built using the Magic Portfolio template by [Once UI](https://once-ui.com). Special thanks to Lorant Toth and Zsofia Komaromi for creating this amazing template.
+
+## **License**
+
+This portfolio is based on a template distributed under the CC BY-NC 4.0 License.
 - Commercial usage is not allowed.
 - Attribution is required.
 
 See `LICENSE.txt` for more information.
 
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=https%3A%2F%2Fonce-ui.com%2Fimages%2Ftemplates%2Fmagic-portfolio%2Fcover.jpg)
