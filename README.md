@@ -1,4 +1,4 @@
-![alt text](public/images/manic_games_studio_logo.png)
+![alt text](public/images/manic_games_studio_logo_normal.png)
 Welcome to my personal developer portfolio, built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
 ## **About Me**
