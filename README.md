@@ -1,8 +1,4 @@
- ____             _____           _ _    
-|  _ \  _____   _|  ___|_ _ _   _| | | __
-| | | |/ _ \ \ / / |_ / _` | | | | | |/ /
-| |_| |  __/\ V /|  _| (_| | |_| | |   < 
-|____/ \___| \_/ |_|  \__,_|\__,_|_|_|\_\
+![alt text](public\images\Design.png)
 
 Welcome to my personal developer portfolio, built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
@@ -57,6 +53,7 @@ Feel free to reach out to me:
 - Blog and project showcase sections
 
 ## **Setup and Customization**
+
 1. Clone the repository
 2. Install dependencies with `npm install`
 3. Run the dev server with `npm run dev`
@@ -71,8 +68,8 @@ This portfolio is built using the Magic Portfolio template by [Once UI](https://
 ## **License**
 
 This portfolio is based on a template distributed under the CC BY-NC 4.0 License.
+
 - Commercial usage is not allowed.
 - Attribution is required.
 
 See `LICENSE.txt` for more information.
-
