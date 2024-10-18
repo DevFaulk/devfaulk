@@ -106,7 +106,7 @@ const about = {
 		experiences: [
 			{
 				company: 'BNY',
-				timeframe: '2022 - Present',
+				timeframe: 'Aug 2024 - Present',
 				role: 'Product Support Engineer',
 				achievements: [
 					<>
@@ -130,8 +130,8 @@ const about = {
 			},
 			{
 				company: 'BNY',
-				timeframe: '2018 - 2022',
-				role: 'Shared Services Engineer and Designer',
+				timeframe: 'Feb 2024 - Aug 2024',
+				role: 'Shared Services Engineer Intern',
 				achievements: [
 					<>
 						Developed a design system that unified the brand across multiple
@@ -152,16 +152,19 @@ const about = {
 		institutions: [
 			{
 				name: 'Community College of Allegheny County',
+				timeframe: 'Oct 2024 - Present',
 				description: (
 					<>Studying Java video game development, and game design.</>
 				),
 			},
 			{
 				name: 'Year Up',
+				timeframe: 'Sep 2023 - Feb 2024',
 				description: <>Studied 400 hours of front-end development</>,
 			},
 			{
 				name: 'Community College of the Airforce',
+				timeframe: 'Nov 2019 - Feb 2024',
 				description: <>Studied 60 credits in general sciences.</>,
 			},
 		],
