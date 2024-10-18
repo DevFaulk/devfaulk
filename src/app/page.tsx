@@ -49,7 +49,7 @@ export function generateMetadata() {
 		},
 	};
 }
-
+// Function for the home page; root.
 export default function Home() {
 	return (
 		<Flex
@@ -58,7 +58,7 @@ export default function Home() {
 			gap="xl"
 			direction="column"
 			alignItems="center">
-			<script
+			<script // Use JS to set all variables
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
@@ -82,7 +82,7 @@ export default function Home() {
 			<Flex fillWidth direction="column" paddingY="l" gap="m">
 				<Flex direction="column" fillWidth maxWidth="s" gap="m">
 					<RevealFx translateY="4">
-						<Heading
+						<Heading // Header "Developer Designer and Video Editor"
 							paddingBottom="8"
 							wrap="balance"
 							variant="display-strong-l">
@@ -90,7 +90,7 @@ export default function Home() {
 						</Heading>
 					</RevealFx>
 					<RevealFx translateY="8" delay={0.2}>
-						<Text
+						<Text // Subtext underneath 'Developer Designer etc.'
 							wrap="balance"
 							onBackground="neutral-medium"
 							variant="body-default-m">
@@ -99,7 +99,7 @@ export default function Home() {
 					</RevealFx>
 					<RevealFx translateY="12" delay={0.4}>
 						<Flex direction="row" gap="8">
-							<Button
+							<Button // 'About me' button
 								data-border="rounded"
 								href="/about"
 								variant="tertiary"
@@ -117,13 +117,13 @@ export default function Home() {
 									About me
 								</Flex>
 							</Button>
-							<Button
+							<Button // Manic Games 'danger' button
 								data-border="rounded"
-								href="https://www.manic.studio"
-								variant="tertiary"
+								href="/manic"
+								variant="danger"
 								suffixIcon="chevronRight"
 								size="l"
-								style={{ fontSize: '2rem', backgroundColor: 'red' }}>
+								style={{ fontSize: '2rem' }}>
 								<Flex gap="8" alignItems="center">
 									Manic Games
 								</Flex>
@@ -132,14 +132,18 @@ export default function Home() {
 					</RevealFx>
 				</Flex>
 			</Flex>
+			{/* Blog and links to those blogs. 
+			This code routes from the blog page [down] */}
 			<RevealFx translateY="16" delay={0.6}>
 				<Projects range={[1, 1]} />
 			</RevealFx>
+			{/* [stop] Here. */}
 			{routes['/blog'] && (
 				<Flex fillWidth paddingX="20">
 					<Posts range={[1, 2]} columns="2" />
 				</Flex>
 			)}
+			{/* Mail chimp ext. from the react hook 'Projects' */}
 			<Projects range={[2]} />
 			{newsletter.display && <Mailchimp />}
 		</Flex>

@@ -6,13 +6,12 @@ const routes = {
 	'/work': true,
 	'/blog': true,
 	'/gallery': true,
+	'/manic': true,
 };
 
 // Enable password protection on selected routes
 // Set password in pages/api/authenticate.ts
-const protectedRoutes = {
-	'https://manic.studio': true,
-};
+const protectedRoutes = {};
 
 const effects = {
 	gradient: true,

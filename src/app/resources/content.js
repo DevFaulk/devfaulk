@@ -308,7 +308,7 @@ const gallery = {
 };
 
 const manic = {
-	label: 'Manic',
+	label: 'Manic?',
 	title: 'My Game Studio',
 	description: `Game Development Studio called Manic Games Studio by ${person.name}`,
 	avatar: {
