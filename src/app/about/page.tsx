@@ -295,7 +295,7 @@ export default function About() {
 							<Flex direction="column" fillWidth gap="l" marginBottom="40">
 								{about.studies.institutions.map((institution, index) => (
 									<Flex
-										key={`${institution.name}-${institution.description}-${index}`}
+										key={`${institution.name}-${institution.study}-${index}`}
 										fillWidth
 										direction="column">
 										<Flex
@@ -303,16 +303,31 @@ export default function About() {
 											justifyContent="space-between"
 											alignItems="flex-end"
 											marginBottom="4">
+											{/* Name of each institution */}
 											<Text id={institution.name} variant="heading-strong-l">
 												{institution.name}
 											</Text>
+											{/* Time attending each institution */}
 											<Text
 												variant="heading-default-xs"
 												onBackground="neutral-weak">
 												{institution.timeframe}
 											</Text>
 										</Flex>
-										<Text></Text>
+										{/* Specific study at each institution */}
+										<Text
+											variant="body-default-l" // modify the size of sub-head text
+											onBackground="brand-weak" // purple lightweight
+											marginBottom="s">
+											{institution.study}
+										</Text>
+										{/* Institution Description */}
+										<Text
+											variant="body-default-l" // modify size of body text
+											onBackground="neutral-medium" // gray normal weight
+											marginBottom="m">
+											{institution.description}
+										</Text>
 									</Flex>
 								))}
 							</Flex>

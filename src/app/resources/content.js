@@ -153,6 +153,7 @@ const about = {
 			{
 				name: 'Community College of Allegheny County',
 				timeframe: 'Oct 2024 - Present',
+				study: 'Multimedia Programming, Simulations, and Game Design',
 				description: (
 					<>Studying Java video game development, and game design.</>
 				),
@@ -160,10 +161,12 @@ const about = {
 			{
 				name: 'Year Up',
 				timeframe: 'Sep 2023 - Feb 2024',
+				study: 'Front-End Development',
 				description: <>Studied 400 hours of front-end development</>,
 			},
 			{
 				name: 'Community College of the Airforce',
+				study: 'Meteorology & Aviation Science',
 				timeframe: 'Nov 2019 - Feb 2024',
 				description: <>Studied 60 credits in general sciences.</>,
 			},

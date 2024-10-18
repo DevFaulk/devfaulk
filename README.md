@@ -32,6 +32,24 @@ For more details, visit the [Projects](/work) section.
 
 For a complete work history, check out my [About/CV](/about) page.
 
+## **Portfolio Documentation**
+
+### UI Decision
+
+#### Manic Page
+
+#### About Page
+
+Easy to read customizable settings for each of my text blocks
+
+![alt text](public/images/about/about-small.png)
+![alt text](public/images/about/about-code-small.png)
+
+Easily modifiable
+
+![alt text](public/images/about/about-big-code.png)
+![alt text](public/images/about/about-big.png)
+
 ## **Blog**
 
 I occasionally write about development topics. Check out my latest posts in the [Blog](/blog) section.
