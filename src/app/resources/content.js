@@ -167,7 +167,7 @@ const about = {
 			{
 				name: 'Community College of the Airforce',
 				study: 'Meteorology & Aviation Science',
-				timeframe: 'Nov 2019 - Feb 2024',
+				timeframe: 'Sep 2020 - Sep 2021',
 				description: <>Studied 60 credits in general sciences.</>,
 			},
 		],

@@ -1,41 +1,81 @@
-import '@/once-ui/styles/index.scss';
-import '@/once-ui/tokens/index.scss';
-
-import classNames from 'classnames';
-
-import { Flex, Background } from '@/once-ui/components';
+import {
+	Avatar,
+	Background,
+	Button,
+	Flex,
+	Heading,
+	Icon,
+	IconButton,
+	SmartImage,
+	Tag,
+	Text,
+} from '@/once-ui/components';
+import {
+	person,
+	about,
+	social,
+	baseURL,
+	manic as manicData,
+	effects,
+} from '../resources';
 import { Footer, Header, RouteGuard } from '@/app/components';
-import { baseURL, effects, home, person, style } from '@/app/resources';
+import { Inter, Source_Code_Pro } from 'next/font/google';
+// import { TableOfContents } from '@/app/manic/components/TableOfContents';
+import { style } from '@/app/resources/config-minimal.js';
+import classNames from 'classnames';
+export function generateMetadata() {
+	const title = manicData.title;
+	const description = manicData.description;
+	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
-import { Inter } from 'next/font/google';
-import { Source_Code_Pro } from 'next/font/google';
-
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-	metadataBase: new URL('https://' + baseURL),
-	title: home.title,
-	description: home.description,
-	openGraph: {
-		title: `${person.firstName}'s Portfolio`,
-		description: 'Portfolio website showcasing my work.',
-		url: baseURL,
-		siteName: `${person.firstName}'s Portfolio`,
-		locale: 'en_US',
-		type: 'website',
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			'max-video-preview': -1,
-			'max-image-preview': 'large',
-			'max-snippet': -1,
+	return {
+		title,
+		description,
+		openGraph: {
+			title,
+			description,
+			type: 'website',
+			url: `https://${baseURL}/blog`,
+			images: [
+				{
+					url: ogImage,
+					alt: title,
+				},
+			],
 		},
+		twitter: {
+			card: 'summary_large_image',
+			title,
+			description,
+			images: [ogImage],
+		},
+	};
+}
+
+const structure = [
+	{
+		title: manicData.intro.title,
+		display: manicData.intro.display,
+		items: [],
 	},
-};
+	{
+		title: manicData.work.title,
+		display: manicData.work.display,
+		items: manicData.work.experiences.map((experience) => experience.company),
+	},
+	{
+		title: manicData.studies.title,
+		display: manicData.studies.display,
+		items: manicData.studies.institutions.map(
+			(institution) => institution.name
+		),
+	},
+	{
+		title: manicData.technical.title,
+		display: manicData.technical.display,
+		items: manicData.technical.skills.map((skill) => skill.title),
+	},
+];
 
 const primary = Inter({
 	variable: '--font-primary',
@@ -66,7 +106,7 @@ interface RootLayoutProps {
 	children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function manic({ children }: RootLayoutProps) {
 	return (
 		<Flex
 			as="html"

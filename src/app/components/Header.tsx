@@ -133,15 +133,16 @@ export const Header = () => {
 						</ToggleButton>
 					)}
 					{routes['/manic'] && (
-						<ToggleButton
-							prefixIcon="manic"
-							href="/manic"
-							style={{ backgroundColor: 'red' }}
-							selected={pathname.startsWith('/manic')}>
-							<Flex paddingX="2" hide="s">
-								{manic.label}
-							</Flex>
-						</ToggleButton>
+						<Flex radius="s-4" alpha="danger-medium" border="brand-medium">
+							<ToggleButton
+								prefixIcon="manic"
+								href="/manic"
+								selected={pathname.startsWith('/manic')}>
+								<Flex paddingX="2" hide="s">
+									{manic.label}
+								</Flex>
+							</ToggleButton>
+						</Flex>
 					)}
 				</Flex>
 			</Flex>

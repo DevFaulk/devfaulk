@@ -236,14 +236,15 @@ export default function About() {
 											</Text>
 											<Text
 												variant="heading-default-xs"
-												onBackground="neutral-weak">
+												onBackground="neutral-weak"
+												marginBottom="xs">
 												{experience.timeframe}
 											</Text>
 										</Flex>
 										<Text
 											variant="body-default-s"
 											onBackground="brand-weak"
-											marginBottom="m">
+											marginBottom="s">
 											{experience.role}
 										</Text>
 										<Flex as="ul" direction="column" gap="16">
@@ -316,14 +317,14 @@ export default function About() {
 										</Flex>
 										{/* Specific study at each institution */}
 										<Text
-											variant="body-default-l" // modify the size of sub-head text
-											onBackground="brand-weak" // purple lightweight
-											marginBottom="s">
+											variant="body-default-m" // modify the size of sub-head text
+											onBackground="brand-medium" // purple medium weight
+											marginBottom="xs">
 											{institution.study}
 										</Text>
 										{/* Institution Description */}
 										<Text
-											variant="body-default-l" // modify size of body text
+											variant="body-default-m" // modify size of body text
 											onBackground="neutral-medium" // gray normal weight
 											marginBottom="m">
 											{institution.description}

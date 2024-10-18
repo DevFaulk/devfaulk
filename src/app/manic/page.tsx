@@ -1,27 +1,29 @@
+import React from 'react';
+
 import {
-	Avatar,
-	Button,
-	Flex,
 	Heading,
-	Icon,
-	IconButton,
-	SmartImage,
-	Tag,
+	Flex,
 	Text,
+	Button,
+	Avatar,
+	RevealFx,
 } from '@/once-ui/components';
+import { Projects } from '@/app/work/components/Projects';
+
 import {
-	person,
 	about,
-	social,
 	baseURL,
-	manic as manicData,
-} from '../resources';
-import TableOfContents from '@/app/manic/components/TableOfContents';
-import styles from '@/app/manic/manic.module.scss';
+	home,
+	newsletter,
+	person,
+	routes,
+} from '@/app/resources';
+import { Mailchimp } from '@/app/components';
+import { Posts } from '@/app/blog/components/Posts';
 
 export function generateMetadata() {
-	const title = manicData.title;
-	const description = manicData.description;
+	const title = home.title;
+	const description = home.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
 	return {
@@ -31,7 +33,7 @@ export function generateMetadata() {
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/blog`,
+			url: `https://${baseURL}/manic`,
 			images: [
 				{
 					url: ogImage,
@@ -47,290 +49,103 @@ export function generateMetadata() {
 		},
 	};
 }
-
-const structure = [
-	{
-		title: manicData.intro.title,
-		display: manicData.intro.display,
-		items: [],
-	},
-	{
-		title: manicData.work.title,
-		display: manicData.work.display,
-		items: manicData.work.experiences.map((experience) => experience.company),
-	},
-	{
-		title: manicData.studies.title,
-		display: manicData.studies.display,
-		items: manicData.studies.institutions.map(
-			(institution) => institution.name
-		),
-	},
-	{
-		title: manicData.technical.title,
-		display: manicData.technical.display,
-		items: manicData.technical.skills.map((skill) => skill.title),
-	},
-];
-
-export default function manic() {
+// Function for the manic page
+export default function Manic() {
 	return (
-		<Flex fillWidth maxWidth="m" direction="column">
-			<script
+		<Flex
+			maxWidth="m"
+			fillWidth
+			gap="xl"
+			direction="column"
+			alignItems="center">
+			<script // Use JS to set all variables
 				type="application/ld+json"
-				suppressHydrationWarning
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
 						'@context': 'https://schema.org',
-						'@type': 'Person',
-						name: person.name,
-						jobTitle: person.role,
-						description: manicData.intro.description,
-						url: `https://manic.studio`,
-						image: `${baseURL}/images/${person.avatar}`,
-						sameAs: social
-							.filter((item) => item.link && !item.link.startsWith('mailto:')) // Filter out empty links and email links
-							.map((item) => item.link),
-						worksFor: {
-							'@type': 'Organization',
-							name: manicData.work.experiences[0].company || '',
+						'@type': 'WebPage',
+						name: home.title,
+						description: home.description,
+						url: `https://${baseURL}/manic`,
+						image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+						publisher: {
+							'@type': 'Person',
+							name: person.name,
+							image: {
+								'@type': 'ImageObject',
+								url: `${baseURL}${person.avatar}`,
+							},
 						},
 					}),
 				}}
 			/>
-			<Flex fillWidth mobileDirection="column" justifyContent="center">
-				{manicData.avatar.display && (
-					<Flex
-						minWidth="160"
-						paddingX="l"
-						paddingBottom="xl"
-						gap="m"
-						flex={3}
-						direction="column"
-						alignItems="center">
-						<Avatar src={person.avatar} size="xl" />
-						<Flex gap="8" alignItems="center">
-							<Icon onBackground="accent-weak" name="globe" />
-							{person.location}
-						</Flex>
-						{person.languages.length > 0 && (
-							<Flex wrap gap="8">
-								{person.languages.map((language, index) => (
-									<Tag key={index} size="l">
-										{language}
-									</Tag>
-								))}
-							</Flex>
-						)}
-					</Flex>
-				)}
-				<Flex
-					className={styles.blockAlign}
-					fillWidth
-					flex={9}
-					maxWidth={40}
-					direction="column">
-					<Flex
-						id={manicData.intro.title}
-						fillWidth
-						minHeight="160"
-						direction="column"
-						justifyContent="center"
-						marginBottom="32">
-						<Heading className={styles.textAlign} variant="display-strong-xl">
-							{person.name}
+			<Flex fillWidth direction="column" paddingY="l" gap="m">
+				<Flex direction="column" fillWidth maxWidth="s" gap="m">
+					<RevealFx translateY="4">
+						<Heading // Header "Developer Designer and Video Editor"
+							paddingBottom="8"
+							wrap="balance"
+							variant="display-strong-l">
+							{home.headline}
 						</Heading>
-						<Text
-							className={styles.textAlign}
-							variant="display-default-xs"
-							onBackground="neutral-weak">
-							{person.role}
+					</RevealFx>
+					<RevealFx translateY="8" delay={0.2}>
+						<Text // Subtext underneath 'Developer Designer etc.'
+							wrap="balance"
+							onBackground="neutral-medium"
+							variant="body-default-m">
+							{home.subline}
 						</Text>
-						{social.length > 0 && (
-							<Flex
-								className={styles.blockAlign}
-								paddingTop="20"
-								paddingBottom="8"
-								gap="8"
-								wrap>
-								{social.map(
-									(item) =>
-										item.link && (
-											<Button
-												key={item.name}
-												href={item.link}
-												prefixIcon={item.icon}
-												label={item.name}
-												size="s"
-												variant="tertiary"
-											/>
-										)
-								)}
-							</Flex>
-						)}
-					</Flex>
-
-					{manicData.intro.display && (
-						<Flex
-							direction="column"
-							textVariant="body-default-l"
-							fillWidth
-							gap="m"
-							marginBottom="xl">
-							{manicData.intro.description}
+					</RevealFx>
+					<RevealFx translateY="12" delay={0.4}>
+						<Flex direction="row" gap="8">
+							<Button // 'About me' button
+								data-border="rounded"
+								href="/about"
+								variant="tertiary"
+								suffixIcon="chevronRight"
+								size="l"
+								style={{ fontSize: '2rem' }}>
+								<Flex gap="8" alignItems="center">
+									{about.avatar.display && (
+										<Avatar
+											style={{ marginLeft: '-1.5rem', marginRight: '0.25rem' }}
+											src={person.avatar}
+											size="l"
+										/>
+									)}
+									About me
+								</Flex>
+							</Button>
+							<Button // Manic Games 'danger' button
+								data-border="rounded"
+								href="/manic"
+								variant="danger"
+								suffixIcon="chevronRight"
+								size="l"
+								style={{ fontSize: '2rem' }}>
+								<Flex gap="8" alignItems="center">
+									Manic Games
+								</Flex>
+							</Button>
 						</Flex>
-					)}
-
-					{manicData.work.display && (
-						<>
-							<Heading
-								as="h2"
-								id={manicData.work.title}
-								variant="display-strong-s"
-								marginBottom="m">
-								{manicData.work.title}
-							</Heading>
-							<Flex direction="column" fillWidth gap="l" marginBottom="40">
-								{manicData.work.experiences.map((experience, index) => (
-									<Flex
-										key={`${experience.company}-${experience.role}-${index}`}
-										fillWidth
-										direction="column">
-										<Flex
-											fillWidth
-											justifyContent="space-between"
-											alignItems="flex-end"
-											marginBottom="4">
-											<Text id={experience.company} variant="heading-strong-l">
-												{experience.company}
-											</Text>
-											<Text
-												variant="heading-default-xs"
-												onBackground="neutral-weak">
-												{experience.timeframe}
-											</Text>
-										</Flex>
-										<Text
-											variant="body-default-s"
-											onBackground="brand-weak"
-											marginBottom="m">
-											{experience.role}
-										</Text>
-										<Flex as="ul" direction="column" gap="16">
-											{experience.achievements.map((achievement, index) => (
-												<Text
-													as="li"
-													variant="body-default-m"
-													key={`${experience.company}-${index}`}>
-													{achievement}
-												</Text>
-											))}
-										</Flex>
-										{experience.images.length > 0 && (
-											<Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
-												{experience.images.map((image, index) => (
-													<Flex
-														key={index}
-														border="neutral-medium"
-														borderStyle="solid-1"
-														radius="m"
-														minWidth={image.width}
-														height={image.height}>
-														<SmartImage
-															enlarge
-															radius="m"
-															sizes={image.width.toString()}
-															alt={image.alt}
-															src={image.src}
-														/>
-													</Flex>
-												))}
-											</Flex>
-										)}
-									</Flex>
-								))}
-							</Flex>
-						</>
-					)}
-
-					{manicData.studies.display && (
-						<>
-							<Heading
-								as="h2"
-								id={manicData.studies.title}
-								variant="display-strong-s"
-								marginBottom="m">
-								{manicData.studies.title}
-							</Heading>
-							<Flex direction="column" fillWidth gap="l" marginBottom="40">
-								{manicData.studies.institutions.map((institution, index) => (
-									<Flex
-										key={`${institution.name}-${index}`}
-										fillWidth
-										gap="4"
-										direction="column">
-										<Text id={institution.name} variant="heading-strong-l">
-											{institution.name}
-										</Text>
-										<Text
-											variant="heading-default-xs"
-											onBackground="neutral-weak">
-											{institution.description}
-										</Text>
-									</Flex>
-								))}
-							</Flex>
-						</>
-					)}
-
-					{manicData.technical.display && (
-						<>
-							<Heading
-								as="h2"
-								id={manicData.technical.title}
-								variant="display-strong-s"
-								marginBottom="40">
-								{manicData.technical.title}
-							</Heading>
-							<Flex direction="column" fillWidth gap="l">
-								{manicData.technical.skills.map((skill, index) => (
-									<Flex
-										key={`${skill}-${index}`}
-										fillWidth
-										gap="4"
-										direction="column">
-										<Text variant="heading-strong-l">{skill.title}</Text>
-										<Text variant="body-default-m" onBackground="neutral-weak">
-											{skill.description}
-										</Text>
-										{(skill.images?.length ?? 0) > 0 && (
-											<Flex fillWidth paddingTop="m" gap="12" wrap>
-												{(skill.images ?? []).map((image, index) => (
-													<Flex
-														key={index}
-														border="neutral-medium"
-														borderStyle="solid-1"
-														radius="m"
-														minWidth={image.width}
-														height={image.height}>
-														<SmartImage
-															enlarge
-															radius="m"
-															sizes={image.width.toString()}
-															alt={image.alt}
-															src={image.src}
-														/>
-													</Flex>
-												))}
-											</Flex>
-										)}
-									</Flex>
-								))}
-							</Flex>
-						</>
-					)}
+					</RevealFx>
 				</Flex>
 			</Flex>
+			{/* Blog and links to those blogs. 
+			This code routes from the blog page [down] */}
+			<RevealFx translateY="16" delay={0.6}>
+				<Projects range={[1, 1]} />
+			</RevealFx>
+			{/* [stop] Here. */}
+			{routes['/blog'] && (
+				<Flex fillWidth paddingX="20">
+					<Posts range={[1, 2]} columns="2" />
+				</Flex>
+			)}
+			{/* Mail chimp ext. from the react hook 'Projects' */}
+			<Projects range={[2]} />
+			{newsletter.display && <Mailchimp />}
 		</Flex>
 	);
 }
