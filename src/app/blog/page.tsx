@@ -2,8 +2,8 @@ import { Flex, Heading } from '@/once-ui/components';
 import { Mailchimp } from '@/app/components';
 import { Posts } from '@/app/blog/components/Posts';
 
-import { blog, newsletter, person } from '@/app/resources'
-import { baseURL, mailchimp } from '@/app/resources'
+import { blog, newsletter, person } from '@/app/resources';
+import { baseURL } from '@/app/resources';
 
 export function generateMetadata() {
 	const title = blog.title;
@@ -35,11 +35,9 @@ export function generateMetadata() {
 }
 
 export default function Blog() {
-    return (
-        <Flex
-			fillWidth maxWidth="s"
-			direction="column">
-            <script
+	return (
+		<Flex fillWidth maxWidth="s" direction="column">
+			<script
 				type="application/ld+json"
 				suppressHydrationWarning
 				dangerouslySetInnerHTML={{
@@ -53,7 +51,7 @@ export default function Blog() {
 						author: {
 							'@type': 'Person',
 							name: person.name,
-                            image: {
+							image: {
 								'@type': 'ImageObject',
 								url: `${baseURL}${person.avatar}`,
 							},
@@ -61,19 +59,14 @@ export default function Blog() {
 					}),
 				}}
 			/>
-            <Heading
-                marginBottom="l"
-                variant="display-strong-s">
-                {blog.title}
-            </Heading>
-			<Flex
-				fillWidth flex={1}>
-				<Posts range={[1,3]}/>
-				<Posts range={[4]} columns="2"/>
+			<Heading marginBottom="l" variant="display-strong-s">
+				{blog.title}
+			</Heading>
+			<Flex fillWidth flex={1}>
+				<Posts range={[1, 3]} />
+				<Posts range={[4]} columns="2" />
 			</Flex>
-            {newsletter.display && (
-                <Mailchimp/>
-            )}
-        </Flex>
-    );
+			{newsletter.display && <Mailchimp />}
+		</Flex>
+	);
 }
