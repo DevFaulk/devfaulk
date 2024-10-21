@@ -1,4 +1,5 @@
 import { InlineCode } from '@/once-ui/components';
+import { size } from '@floating-ui/react-dom';
 import Link from 'next/link';
 
 const person = {
@@ -61,12 +62,11 @@ const home = {
 	label: 'Home',
 	title: `${person.name}'s Portfolio`,
 	description: `Portfolio website showcasing my work as a ${person.role}`,
-	headline: <>Developer Designer and Video Editor</>,
+	headline: <>Creator and Developer</>,
 	subline: (
 		<>
-			Hello I am Theo! I am currently an engineer at{' '}
-			<InlineCode>BNY</InlineCode>, where I craft intuitive
-			<br /> user experiences, and edit videos/make games in my free time.
+			Hello I am Teddy! I am currently an engineer and a content creator, where
+			I make videos about projects I'm making.
 		</>
 	),
 };

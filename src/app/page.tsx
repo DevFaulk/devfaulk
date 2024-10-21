@@ -82,7 +82,7 @@ export default function Home() {
 			<Flex fillWidth direction="column" paddingY="l" gap="m">
 				<Flex direction="column" fillWidth maxWidth="s" gap="m">
 					<RevealFx translateY="4">
-						<Heading // Header "Developer Designer and Video Editor"
+						<Heading // Header 
 							paddingBottom="8"
 							wrap="balance"
 							variant="display-strong-l">
