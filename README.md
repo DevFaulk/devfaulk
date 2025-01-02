@@ -3,8 +3,9 @@ Welcome to my personal developer portfolio, built with [Once UI](https://once-ui
 
 ## **About Me**
 
-I'm DevFaulk, a passionate developer with expertise in web technologies. This portfolio showcases my projects, skills, and experiences in the world of software dev, game dev, and video editing.
+I'm DevFaulk, a passionate developer with expertise in web technologies.
 
+I am a Dad first, and just winging it the rest of the time.
 ## **Projects**
 
 Here are some of my notable projects:
